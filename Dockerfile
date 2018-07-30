@@ -20,7 +20,7 @@ COPY ./generator_secret_json.py .
 RUN django-admin startproject app .
 
 WORKDIR app
-COPY wsgi.py .
+COPY settings.py .
 
 WORKDIR /home/docker/django
 EXPOSE 8000
