@@ -14,9 +14,10 @@ services:
       - backend
 
     volumes:
-      - ./tmp:/tmp/
-      - ./settings/:/home/docker/django/app/settings/
-      - ./app/:/home/docker/django/app/
+#       - tmp
+      - /tmp:/tmp/
+#      - ./settings/:/home/docker/django/app/settings/
+#      - app_volume:/home/docker/django/app/
 
   nginx:
     container_name: nginx
@@ -30,7 +31,10 @@ services:
       - backend
                
     volumes:
-      - ./tmp:/tmp/
+      - /tmp:/tmp/
+
+#volumes:
+#  tmp
  
 networks:
   backend:
