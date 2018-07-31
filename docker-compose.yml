@@ -6,6 +6,7 @@ services:
     ports:
       - "8000:8000"
       - "8001:8001"
+      - "50022:22"
     #environment: # 환경변수 설정
     #  - NODE_PATH=src
     #  - DB_HOST=mongo
@@ -15,8 +16,6 @@ services:
 
     volumes:
       - ./tmp:/tmp/
-      - ./settings/:/home/docker/django/app/settings/
-      - ./app/:/home/docker/django/app/
 
   nginx:
     container_name: nginx
