@@ -1,6 +1,7 @@
 import os
+filename = 'secret.json'
 
-if not os.path.isfile('secret.json'):
+if not os.path.isfile(filename):
     import json
     from django.core.management.utils import get_random_secret_key
 
@@ -13,6 +14,6 @@ if not os.path.isfile('secret.json'):
 
     secret = json.dumps(secret)
 
-    f = open('secret.json', 'w')
+    f = open(filename, 'w')
     f.write(secret)
     f.close()
